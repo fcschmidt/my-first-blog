@@ -9,17 +9,14 @@
         <h1><a href="">Django Girls Blog</a></h1>
     </div>
 
-    <div>
-        <p>published: 15.11.2015, 02:25</p>
-        <h2><a href="">My first post</a></h2>
-        <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis.</p>
-    </div>
+    {% for post in posts %}
+        <div>
+            <h3><a href="">{{ post.title }}</a></h3>
+            <p>published: {{ post.published_date }}</p>
+            <p>{{ post.text|linebreaks }}</p>
+        </div>
+    {% endfor %}
 
-    <div>
-        <p>published: 15.11.2015, 02:25</p>
-        <h2><a href="">My second post</a></h2>
-        <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis.</p>
-    </div>
 
 </body>
 </html>
